@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery-3.0.0.min.js"></script>
+    <script src="jquery.validate.js"></script>
+    <style>
+        #busilg_wrap {
+            background-image: url("businessLogin_bg.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            position: fixed;
+            left: 0;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            /*text-align: center;*/
+            padding: auto 0;
+        }
+        #busilg_wrap .login_dialog
+        {
+            background-color: rgb(133,133,133);
+            width: 610px;
+            height: 380px;
+            /*margin: auto 0;*/
+           position: relative;
+            left: 720px;
+            top: 230px;
+            border: 10px solid rgb(96,96,96);
+            border-radius: 7px;
+        }
+        #busilg_wrap input
+        {
+            background-color: rgb(200,200,200);
+            border: none;
+            border-radius: 5px;
+            height: 50px;
+            width: 250px;
+            text-indent: 6px;
+        }
+        #busilg_wrap table
+        {
+            margin: auto 0;
+        }
+
+        #busilg_wrap tr
+        {
+            color: white;
+            height: 80px;
+        }
+        #busilg_wrap tr:first-child
+        {
+            height: 40px;
+        }
+        #busilg_wrap .login-btn
+        {
+            width: 160px;
+            height: 44px;
+            color: white;
+            font-size: 15px;
+            font-weight: 600;
+            background-color: rgb(145,145,145);
+            border-radius: 5px;
+            border: none;
+            border-right: 1px solid rgb(110,110,110);
+            border-bottom: 1px solid rgb(110,110,110);
+            outline: none;
+        }
+        #busilg_wrap .login-btn:hover
+        {
+            background-color: rgb(170,170,170);
+            border-right: 1px solid rgb(150,150,150);
+            border-bottom: 1px solid rgb(150,150,150);
+        }
+        #busilg_wrap .logo
+        {
+            background-repeat: no-repeat;
+            background-image: url("logo-1.png");
+            background-position: center;
+            height: 100%;
+            width: 236px;
+            display: inline-block;
+        }
+    </style>
+
+</head>
+<body>
+<div id="busilg_wrap">
+        <div class="login_dialog">
+            <div class="logo" style=""></div>
+            <form id="busi-lg-form" action="" style="display: inline-block;vertical-align: top;margin-top: 45px">
+                <table >
+                    <tr>
+                        <th></th>
+                        <th   align="left" style="vertical-align: middle;font-weight: 600;font-size: 22px;">代理商登录</th>
+                    </tr>
+                    <tr>
+                        <td>帐号：</td>
+                        <td><input id="un" type="text" maxlength="20"></td>
+                    </tr>
+                    <tr>
+                        <td>密码：</td>
+                        <td><input id="pw" type="password" maxlength="20"></td>
+                    </tr>
+                    <tr style="height: 30px">
+                        <td></td>
+                        <td align="left"><span id="login-error" style="color: red;display: none">密码或帐号错误</span></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td colspan="2" align="left">
+                            <button  class="login-btn">登录</button>
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+</div>
+<script>
+    $("#busi-lg-form .login-btn").on("click",function (e) {
+        e.preventDefault();
+        $("#login-error").toggle();
+        $("#busi-lg-form").validate({
+            rules:{
+                un:{
+                    require:true,
+                },
+                pw:{
+
+                }
+            }
+        });
+    });
+    document.getElementsByName("password")
+</script>
+
+
+</body>
+</html>
